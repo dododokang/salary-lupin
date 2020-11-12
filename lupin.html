@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        나는 말이야, 월급은 루팡해야 제 맛이라 생각해
+    </header>
+    <section>
+        <div>
+            <span>나는</span>
+            <select id="selectedPayType">
+                <option value="1">시급</option>
+                <option value="2">월급</option>
+                <option value="3" selected>연봉</option>
+            </select>
+            <span>이</span>
+        </div>
+        <div>
+            <input type="number" pattern="[0-9]*" id="inputPay">
+            <span id="addUnit"></span><span>원 이고</span>
+        </div>
+        <div>
+            <span>주</span>
+            <input type="number" pattern="[0-9]*">
+            <span>회 출근,</span>
+        </div>
+        <div>
+            <span>하루</span>
+            <input type="number" pattern="[0-9]*">
+            <span>시간 근무해서...</span>
+        </div>
+        <button onclick=>얼마 루팡하고 있을까?</button>
+    </section>
+    <section>
+        <span id="showResult"></span>
+        <span>루팡한다</span>
+    </section>
+    
+    <script>
+        let selectedPayType = document.querySelector('#selectedPayType').value;
+        let inputPay = document.querySelector('#inputPay').value;
+
+        if (selectedPayType = 2 || 3) {
+            document.querySelector('#addUnit').textContent = '만';
+            inputPay = inputPay * 10000;
+        } else {
+            document.querySelector('#addUnit').textContent = '';
+        }
+    </script>
+</body>
+</html>
